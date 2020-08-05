@@ -1,19 +1,20 @@
 package lk.ijse.student_management.entity;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 
 public class Registration implements SuperEntity{
 
     private String rid;
     private String bid;
     private String nic;
-    private String rdate;
+    private Date rdate;
     private BigDecimal rfee;
 
     public Registration() {
     }
 
-    public Registration(String rid, String bid, String nic, String rdate, BigDecimal rfee) {
+    public Registration(String rid, String bid, String nic, Date rdate, BigDecimal rfee) {
         this.rid = rid;
         this.bid = bid;
         this.nic = nic;
@@ -45,11 +46,11 @@ public class Registration implements SuperEntity{
         this.nic = nic;
     }
 
-    public String getRdate() {
+    public Date getRdate() {
         return rdate;
     }
 
-    public void setRdate(String rdate) {
+    public void setRdate(Date rdate) {
         this.rdate = rdate;
     }
 
@@ -67,7 +68,7 @@ public class Registration implements SuperEntity{
                 "rid='" + rid + '\'' +
                 ", bid='" + bid + '\'' +
                 ", nic='" + nic + '\'' +
-                ", rdate='" + rdate + '\'' +
+                ", rdate=" + rdate +
                 ", rfee=" + rfee +
                 '}';
     }
