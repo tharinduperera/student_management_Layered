@@ -1,19 +1,21 @@
 package lk.ijse.student_management.entity;
 
+import java.math.BigDecimal;
+
 public class Course {
 
     private String cid;
     private String cname;
     private String ctype;
     private String duration;
-    private double cfee;
-    private double dscfull;
-    private double dsctwice;
+    private BigDecimal cfee;
+    private BigDecimal dscfull;
+    private BigDecimal dsctwice;
 
     public Course() {
     }
 
-    public Course(String cid, String cname, String ctype, String duration, double cfee, double dscfull, double dsctwice) {
+    public Course(String cid, String cname, String ctype, String duration, BigDecimal cfee, BigDecimal dscfull, BigDecimal dsctwice) {
         this.cid = cid;
         this.cname = cname;
         this.ctype = ctype;
@@ -55,27 +57,27 @@ public class Course {
         this.duration = duration;
     }
 
-    public double getCfee() {
+    public BigDecimal getCfee() {
         return cfee;
     }
 
-    public void setCfee(double cfee) {
+    public void setCfee(BigDecimal cfee) {
         this.cfee = cfee;
     }
 
-    public double getDscfull() {
+    public BigDecimal getDscfull() {
         return dscfull;
     }
 
-    public void setDscfull(double dscfull) {
+    public void setDscfull(BigDecimal dscfull) {
         this.dscfull = dscfull;
     }
 
-    public double getDsctwice() {
+    public BigDecimal getDsctwice() {
         return dsctwice;
     }
 
-    public void setDsctwice(double dsctwice) {
+    public void setDsctwice(BigDecimal dsctwice) {
         this.dsctwice = dsctwice;
     }
 

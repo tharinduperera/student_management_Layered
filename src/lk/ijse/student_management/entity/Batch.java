@@ -1,18 +1,20 @@
 package lk.ijse.student_management.entity;
 
+import java.sql.Date;
+
 public class Batch {
 
     private String bid;
     private String bname;
     private String cid;
     private String cname;
-    private String startdate;
+    private Date startdate;
 
 
     public Batch() {
     }
 
-    public Batch(String bid, String bname, String cid, String cname, String startdate) {
+    public Batch(String bid, String bname, String cid, String cname, Date startdate) {
         this.bid = bid;
         this.bname = bname;
         this.cid = cid;
@@ -52,11 +54,11 @@ public class Batch {
         this.cname = cname;
     }
 
-    public String getStartdate() {
+    public Date getStartdate() {
         return startdate;
     }
 
-    public void setStartdate(String startdate) {
+    public void setStartdate(Date startdate) {
         this.startdate = startdate;
     }
 
@@ -67,7 +69,7 @@ public class Batch {
                 ", bname='" + bname + '\'' +
                 ", cid='" + cid + '\'' +
                 ", cname='" + cname + '\'' +
-                ", startdate='" + startdate + '\'' +
+                ", startdate=" + startdate +
                 '}';
     }
 }
