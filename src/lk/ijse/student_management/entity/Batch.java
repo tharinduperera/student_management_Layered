@@ -2,7 +2,7 @@ package lk.ijse.student_management.entity;
 
 import java.sql.Date;
 
-public class Batch {
+public class Batch implements SuperEntity{
 
     private String bid;
     private String bname;

@@ -1,6 +1,6 @@
 package lk.ijse.student_management.entity;
 
-public class Guardian {
+public class Guardian implements SuperEntity{
     private String gid;
     private String sdnic;
     private String gname;

@@ -1,8 +1,9 @@
 package lk.ijse.student_management.entity;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 
-public class Payment {
+public class Payment implements SuperEntity{
 
 
     private String pid;
@@ -10,13 +11,13 @@ public class Payment {
     private String nic;
     private String bid;
     private String ptype;
-    private String pdate;
+    private Date pdate;
     private BigDecimal amount;
 
     public Payment() {
     }
 
-    public Payment(String pid, String rid, String nic, String bid, String ptype, String pdate, BigDecimal amount) {
+    public Payment(String pid, String rid, String nic, String bid, String ptype, Date pdate, BigDecimal amount) {
         this.pid = pid;
         this.rid = rid;
         this.nic = nic;
@@ -66,11 +67,11 @@ public class Payment {
         this.ptype = ptype;
     }
 
-    public String getPdate() {
+    public Date getPdate() {
         return pdate;
     }
 
-    public void setPdate(String pdate) {
+    public void setPdate(Date pdate) {
         this.pdate = pdate;
     }
 
@@ -90,7 +91,7 @@ public class Payment {
                 ", nic='" + nic + '\'' +
                 ", bid='" + bid + '\'' +
                 ", ptype='" + ptype + '\'' +
-                ", pdate='" + pdate + '\'' +
+                ", pdate=" + pdate +
                 ", amount=" + amount +
                 '}';
     }

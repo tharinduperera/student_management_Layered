@@ -2,7 +2,7 @@ package lk.ijse.student_management.entity;
 
 import java.sql.Date;
 
-public class Student {
+public class Student implements SuperEntity{
 
     private String nic;
     private String namewithinitials;

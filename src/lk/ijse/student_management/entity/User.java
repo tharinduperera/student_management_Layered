@@ -1,6 +1,6 @@
 package lk.ijse.student_management.entity;
 
-public class User {
+public class User implements SuperEntity{
 
     private String username;
     private String password;

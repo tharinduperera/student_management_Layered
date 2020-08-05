@@ -2,7 +2,7 @@ package lk.ijse.student_management.entity;
 
 import java.math.BigDecimal;
 
-public class Registration {
+public class Registration implements SuperEntity{
 
     private String rid;
     private String bid;
