@@ -4,22 +4,14 @@ import java.io.Serializable;
 
 public class BatchRegistrationPK implements SuperEntity {
 
-    private String bid;
     private String rid;
+    private String bid;
 
     public BatchRegistrationPK() {
     }
 
-    public BatchRegistrationPK(String bid, String rid) {
-        this.bid = bid;
+    public BatchRegistrationPK(String rid, String bid) {
         this.rid = rid;
-    }
-
-    public String getBid() {
-        return bid;
-    }
-
-    public void setBid(String bid) {
         this.bid = bid;
     }
 
@@ -31,11 +23,19 @@ public class BatchRegistrationPK implements SuperEntity {
         this.rid = rid;
     }
 
+    public String getBid() {
+        return bid;
+    }
+
+    public void setBid(String bid) {
+        this.bid = bid;
+    }
+
     @Override
     public String toString() {
         return "BatchRegistrationPK{" +
-                "bid='" + bid + '\'' +
-                ", rid='" + rid + '\'' +
+                "rid='" + rid + '\'' +
+                ", bid='" + bid + '\'' +
                 '}';
     }
 }

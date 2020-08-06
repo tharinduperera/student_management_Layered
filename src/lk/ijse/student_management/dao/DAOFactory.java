@@ -21,8 +21,6 @@ public class DAOFactory {
                 return (T) new CourseDAOImpl();
             case GUARDIAN:
                 return (T) new GuardianDAOImpl();
-            case PAYMENT:
-                return (T) new PaymentDAOImpl();
             case REGISTRATION:
                 return (T) new RegistrationDAOImpl();
             case STUDENT:

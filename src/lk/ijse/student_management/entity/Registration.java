@@ -5,8 +5,7 @@ import java.sql.Date;
 
 public class Registration implements SuperEntity{
 
-    private String rid;
-    private String bid;
+    private BatchRegistrationPK batchRegistrationPK;
     private String nic;
     private Date rdate;
     private BigDecimal rfee;
@@ -14,28 +13,19 @@ public class Registration implements SuperEntity{
     public Registration() {
     }
 
-    public Registration(String rid, String bid, String nic, Date rdate, BigDecimal rfee) {
-        this.rid = rid;
-        this.bid = bid;
+    public Registration(String rid,String bid, String nic, Date rdate, BigDecimal rfee) {
+        this.batchRegistrationPK = new BatchRegistrationPK(rid,bid);
         this.nic = nic;
         this.rdate = rdate;
         this.rfee = rfee;
     }
 
-    public String getRid() {
-        return rid;
+    public BatchRegistrationPK getBatchRegistrationPK() {
+        return batchRegistrationPK;
     }
 
-    public void setRid(String rid) {
-        this.rid = rid;
-    }
-
-    public String getBid() {
-        return bid;
-    }
-
-    public void setBid(String bid) {
-        this.bid = bid;
+    public void setBatchRegistrationPK(BatchRegistrationPK batchRegistrationPK) {
+        this.batchRegistrationPK = batchRegistrationPK;
     }
 
     public String getNic() {
@@ -65,8 +55,7 @@ public class Registration implements SuperEntity{
     @Override
     public String toString() {
         return "Registration{" +
-                "rid='" + rid + '\'' +
-                ", bid='" + bid + '\'' +
+                "batchRegistrationPK=" + batchRegistrationPK +
                 ", nic='" + nic + '\'' +
                 ", rdate=" + rdate +
                 ", rfee=" + rfee +
