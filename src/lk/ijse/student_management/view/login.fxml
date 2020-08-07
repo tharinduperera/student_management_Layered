@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="199.0" prefWidth="292.0" style="-fx-background-color: #e9f5f3;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.student_management.controller.UserController">
+<AnchorPane fx:id="root" prefHeight="199.0" prefWidth="292.0" style="-fx-background-color: #e9f5f3;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.student_management.controller.UserController">
    <children>
-      <Label layoutX="60.0" layoutY="14.0" text="Student Management" textFill="#732e9a">
+      <Label layoutX="45.0" layoutY="14.0" prefHeight="30.0" prefWidth="203.0" text="Student Management" textFill="#732e9a">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtusername" layoutX="65.0" layoutY="65.0" onAction="#txtusernameOnAction" promptText="Username">
+      <JFXTextField fx:id="txtusername" layoutX="59.0" layoutY="58.0" onAction="#txtusernameOnAction" prefHeight="25.0" prefWidth="173.0" promptText="Username">
          <font>
             <Font size="13.0" />
-         </font></TextField>
-      <Button fx:id="btnLogin" layoutX="120.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnLoginOnAction" style="-fx-background-color: #6bdbc9;" text="LOGIN" textFill="#4b8633" />
-      <PasswordField fx:id="txtpassword" layoutX="65.0" layoutY="105.0" onAction="#txtpasswordOnAction" promptText="Password">
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnLogin" layoutX="117.0" layoutY="160.0" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="57.0" style="-fx-background-color: #aee8c7;" text="LOGIN" textFill="#397c10" />
+      <JFXPasswordField fx:id="txtpassword" layoutX="59.0" layoutY="109.0" onAction="#txtpasswordOnAction" prefHeight="25.0" prefWidth="173.0" promptText="Password">
          <font>
             <Font size="13.0" />
-         </font></PasswordField>
+         </font>
+      </JFXPasswordField>
    </children>
 </AnchorPane>

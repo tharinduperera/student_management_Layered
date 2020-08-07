@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="coursepane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.student_management.controller.CourseController">
+   <children>
+      <Label layoutX="39.0" layoutY="29.0" text="Manage Course Detail...">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblcid" disable="true" layoutX="311.0" layoutY="26.0" prefHeight="29.0" prefWidth="118.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TableView fx:id="tblcourse" layoutX="73.0" layoutY="368.0" prefHeight="329.0" prefWidth="820.0">
+        <columns>
+          <TableColumn prefWidth="79.99998474121094" text="Course ID" />
+          <TableColumn prefWidth="116.0" text="Name" />
+            <TableColumn prefWidth="109.0" text="Type" />
+            <TableColumn prefWidth="134.0" text="Duration" />
+            <TableColumn prefWidth="134.0" text="Course Fee" />
+            <TableColumn prefWidth="126.0" text="Full Payment" />
+            <TableColumn prefWidth="120.0" text="Installment" />
+        </columns>
+      </TableView>
+      <Label layoutX="76.0" layoutY="320.0" prefHeight="19.0" prefWidth="370.0" text="Search Here ( Course ID,Course Name, Course  Type, Duration )" textFill="#9e791c">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <JFXTextField fx:id="txtname" layoutX="104.0" layoutY="103.0" onAction="#txtnameOnAction" promptText="Course Name">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtduration" layoutX="319.0" layoutY="103.0" onAction="#txtdurationOnAction" promptText="Duration (Months)">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXRadioButton fx:id="rdofull" layoutX="555.0" layoutY="108.0" text="Full Time">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="rdopart" layoutX="695.0" layoutY="108.0" text="Part Time">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXRadioButton>
+      <JFXTextField fx:id="txtfee" layoutX="104.0" layoutY="178.0" onAction="#txtfeeOnAction" promptText="Course Fee">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtdiscount" layoutX="284.0" layoutY="178.0" onAction="#txtdiscountOnAction" prefHeight="25.0" prefWidth="90.0" promptText="Discount Rate">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txttax" layoutX="393.0" layoutY="178.0" onAction="#txttaxOnAction" prefHeight="25.0" prefWidth="90.0" promptText="Tax Rate">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtfull" layoutX="528.0" layoutY="178.0" promptText="Full Payment">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtinstallment" layoutX="695.0" layoutY="178.0" promptText="Installment">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtsearch" layoutX="468.0" layoutY="308.0" onAction="#txtsearchOnAction" promptText="Search Here">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSave" layoutX="626.0" layoutY="246.0" onAction="#btnSaveOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #e8ff8c;" text="Save" textFill="#4d8a61">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnCancel" layoutX="747.0" layoutY="246.0" onAction="#btnCancelOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #f7d492;" text="Cancel" textFill="#944242">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
