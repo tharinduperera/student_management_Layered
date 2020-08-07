@@ -1,4 +1,4 @@
 package lk.ijse.student_management.controller;
 
-public class CourseController {
+public class MainController {
 }

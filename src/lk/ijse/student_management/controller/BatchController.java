@@ -1,4 +1,4 @@
-package lk.ijse.controller;
+package lk.ijse.student_management.controller;
 
 public class BatchController {
 }

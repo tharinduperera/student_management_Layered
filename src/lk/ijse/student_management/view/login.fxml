@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="199.0" prefWidth="292.0" style="-fx-background-color: #e9f5f3;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.student_management.controller.UserController">
+   <children>
+      <Label layoutX="60.0" layoutY="14.0" text="Student Management" textFill="#732e9a">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtusername" layoutX="65.0" layoutY="65.0" onAction="#txtusernameOnAction" promptText="Username">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Button fx:id="btnLogin" layoutX="120.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnLoginOnAction" style="-fx-background-color: #6bdbc9;" text="LOGIN" textFill="#4b8633" />
+      <PasswordField fx:id="txtpassword" layoutX="65.0" layoutY="105.0" onAction="#txtpasswordOnAction" promptText="Password">
+         <font>
+            <Font size="13.0" />
+         </font></PasswordField>
+   </children>
+</AnchorPane>
