@@ -1,4 +1,4 @@
-package lk.ijse.business.custom.impl;
+package lk.ijse.student_management.business.custom.impl;
 
 public class StudentBOImpl {
 }

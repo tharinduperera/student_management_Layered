@@ -1,4 +1,6 @@
 package lk.ijse.student_management.business.custom;
 
-public interface UserBO {
+import lk.ijse.student_management.business.SuperBO;
+
+public interface UserBO extends SuperBO {
 }

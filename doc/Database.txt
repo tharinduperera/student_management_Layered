@@ -1,0 +1,94 @@
+drop database billingsystem;
+create database billingsystem;
+use billingsystem;
+
+
+create table student(
+nic varchar(10) not null,
+namewithinitials varchar(100),
+fullname varchar(150),
+gender varchar(10),
+dob varchar(10),
+address varchar(150),
+telhome varchar(11),
+telmobile varchar(11),
+email varchar(150),
+school varchar(100),
+university_or_other varchar(200),
+higher_education varchar(255),
+constraint primary key(nic)
+); 
+
+create table guardian(
+sdnic varchar(10) not null,
+gid varchar(10) not null,
+gname varchar(100),
+gaddress varchar(150),
+gtel varchar(11),
+gemail varchar(150),
+designation varchar(100),
+workplace varchar(100),
+constraint primary key(gid),
+constraint foreign key(sdnic) references student(nic)	
+on delete cascade on update cascade
+);
+
+create table course(
+cid varchar(10) not null,
+cname varchar(100),
+ctype varchar(50),
+duration varchar(50),
+cfee decimal(8,2),
+dcsfull decimal(8,2),
+dcstwice decimal(8,2),
+constraint primary key(cid)
+);
+
+create table batch(
+bid varchar(50) not null,
+bname varchar(100),
+cid varchar(50) not null,
+cname varchar(100),
+startdate varchar(10),
+constraint primary key(bid),
+constraint foreign key(cid) references course(cid)	
+on delete cascade on update cascade
+
+);
+
+create table registration(
+rid varchar(50) not null,
+bid varchar(50) not null,
+nic varchar(10) not null,
+rdate varchar(10),
+rfee double(8,2),
+constraint primary key(rid),
+constraint foreign key(nic) references student(nic)	
+on delete cascade on update cascade,
+constraint foreign key(bid) references batch(bid)	
+on delete cascade on update cascade
+
+);
+
+create table payment(
+pid varchar(50) not null,
+rid varchar(50) not null,
+nic varchar(11) not null,
+bid varchar(50) not null,
+ptype varchar(100),
+pdate varchar(10),
+amount decimal(8,2),
+constraint primary key(pid),
+constraint foreign key(rid) references registration(rid)	
+on delete cascade on update cascade,
+constraint foreign key(bid) references batch(bid)	
+on delete cascade on update cascade,
+constraint foreign key(nic) references student(nic)	
+on delete cascade on update cascade
+);
+
+create table user(
+username varchar(100),
+password varchar(100),
+constraint primary key(username)
+);

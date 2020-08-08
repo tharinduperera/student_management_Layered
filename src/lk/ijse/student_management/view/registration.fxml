@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -14,28 +15,32 @@
 
 <AnchorPane fx:id="studentpane" prefHeight="750.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.student_management.controller.StudentController">
    <children>
-      <Label layoutX="32.0" layoutY="23.0" text="Manage Student Detail...">
+      <Label layoutX="32.0" layoutY="23.0" text="Registration Detail...">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TableView fx:id="tblStudent" layoutX="12.0" layoutY="521.0" prefHeight="210.0" prefWidth="922.0">
+      <TableView fx:id="tblregistration" layoutX="68.0" layoutY="512.0" prefHeight="225.0" prefWidth="800.0">
          <columns>
-            <TableColumn prefWidth="99.0" text="Name" />
-            <TableColumn prefWidth="97.0" text="NIC" />
-            <TableColumn prefWidth="102.0" text="Date of Birth" />
-            <TableColumn prefWidth="108.0" text="Address" />
-            <TableColumn prefWidth="129.0" text="Tel: Home" />
-            <TableColumn prefWidth="103.0" text="Tel: Moblie" />
-            <TableColumn prefWidth="157.0" text="Email" />
-            <TableColumn prefWidth="126.0" text="School" />
+            <TableColumn prefWidth="129.0" text="Registration ID" />
+            <TableColumn prefWidth="119.0" text="BatchID" />
+            <TableColumn prefWidth="123.0" text="Batch Name" />
+            <TableColumn prefWidth="141.0" text="NIC" />
+            <TableColumn prefWidth="150.0" text="Registered Date" />
+            <TableColumn minWidth="0.0" prefWidth="137.0" text="Registration Fee" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="txtnic" layoutX="307.0" layoutY="20.0" onAction="#txtnicOnAction" promptText="NIC">
+      <JFXTextField fx:id="txtnic" layoutX="256.0" layoutY="20.0" onAction="#txtnicOnAction" promptText="NIC" text="NIC">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
+      <JFXTextField fx:id="txtrfee" layoutX="459.0" layoutY="20.0" onAction="#txtrfeeOnAction" promptText="NIC" text="Registration Fee">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXComboBox fx:id="cmbbname" layoutX="682.0" layoutY="22.0" onAction="#cmbbnameOnAction" prefHeight="25.0" prefWidth="146.0" promptText="Batch Name" />
       <JFXTextField fx:id="txtname" layoutX="53.0" layoutY="82.0" onAction="#txtnameOnAction" promptText="Course Name" text="Name With Initials">
          <font>
             <Font size="13.0" />
@@ -117,17 +122,17 @@
             <Font size="13.0" />
          </font>
       </JFXRadioButton>
-      <JFXTextField fx:id="txtsearch" layoutX="449.0" layoutY="472.0" onAction="#txtsearchOnAction" promptText="Search Here">
+      <JFXTextField fx:id="txtsearch" layoutX="476.0" layoutY="467.0" onAction="#txtsearchOnAction" promptText="Search Here">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnUpdate" layoutX="638.0" layoutY="416.0" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #e8ff8c;" text="Update" textFill="#4d8a61">
+      <JFXButton fx:id="btnregister" layoutX="587.0" layoutY="416.0" onAction="#btnregisterOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #e8ff8c;" text="Register" textFill="#4d8a61">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnCancel" layoutX="759.0" layoutY="416.0" onAction="#btnCancelOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #f7d492;" text="Cancel" textFill="#944242">
+      <JFXButton fx:id="btnCancel" layoutX="805.0" layoutY="416.0" onAction="#btnCancelOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #f7d492;" text="Cancel" textFill="#944242">
          <font>
             <Font size="18.0" />
          </font>
@@ -142,6 +147,11 @@
             <Font size="13.0" />
          </font>
       </Label>
+      <Label layoutX="41.0" layoutY="308.0" text="Guardian Detail..." textFill="#44791b">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
       <Label layoutX="465.0" layoutY="247.0" text="Higher Educational Qualifications :">
          <font>
             <Font size="13.0" />
@@ -153,16 +163,21 @@
       <JFXCheckBox fx:id="chkdegree" layoutX="679.0" layoutY="265.0" text="Degree" />
       <JFXCheckBox fx:id="chkmaster" layoutX="755.0" layoutY="265.0" text="Master" />
       <JFXCheckBox fx:id="chkother" layoutX="826.0" layoutY="265.0" text="Other" />
-      <Label layoutX="41.0" layoutY="486.0" prefHeight="19.0" prefWidth="382.0" text="Search Here ( Name, NIC, Email, Contact, Date of Birth, School .... )" textFill="#9e791c">
+      <Label layoutX="68.0" layoutY="481.0" prefHeight="19.0" prefWidth="382.0" text="Search Here ( Registration ID, Batch ID, Batch Name, NIC, Registered Date)" textFill="#9e791c">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
       <Separator layoutX="26.0" layoutY="297.0" prefHeight="3.0" prefWidth="901.0" />
-      <Label layoutX="41.0" layoutY="308.0" text="Guardian Detail..." textFill="#44791b">
+      <Label fx:id="lblrid" layoutX="868.0" layoutY="5.0" prefHeight="25.0" prefWidth="70.0">
          <font>
-            <Font size="15.0" />
+            <Font size="13.0" />
          </font>
       </Label>
+      <JFXButton fx:id="btnUpdate" layoutX="697.0" layoutY="417.0" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #e8ff8c;" text="Update" textFill="#4d8a61">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
