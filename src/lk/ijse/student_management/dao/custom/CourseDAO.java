@@ -4,4 +4,7 @@ import lk.ijse.student_management.dao.CrudDAO;
 import lk.ijse.student_management.entity.Course;
 
 public interface CourseDAO extends CrudDAO<Course,String> {
+
+    String getlastCourseId() throws Exception;
+
 }

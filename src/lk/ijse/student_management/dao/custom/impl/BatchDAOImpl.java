@@ -54,4 +54,14 @@ public class BatchDAOImpl implements BatchDAO {
     public boolean delete(String key) throws Exception {
         return CrudUtil.execute("DELETE FROM Batch WHERE bid = ?",key);
     }
+
+    @Override
+    public String getlastBatchId() throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Bstch ORDER BY bid DESC LIMIT 1");
+        if (!resultSet.next()) {
+            return null;
+        } else {
+            return resultSet.getString(1);
+        }
+    }
 }

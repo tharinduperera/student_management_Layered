@@ -54,4 +54,14 @@ public class CourseDAOImpl implements CourseDAO {
     public boolean delete(String key) throws Exception {
         return CrudUtil.execute("DELETE FROM COURSE WHERE cid = ?",key);
     }
+
+    @Override
+    public String getlastCourseId() throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Course ORDER BY cid DESC LIMIT 1");
+        if (!resultSet.next()) {
+            return null;
+        } else {
+            return resultSet.getString(1);
+        }
+    }
 }

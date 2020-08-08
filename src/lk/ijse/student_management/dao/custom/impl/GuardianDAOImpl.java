@@ -56,4 +56,14 @@ public class GuardianDAOImpl implements GuardianDAO {
     public boolean delete(String key) throws Exception {
         return CrudUtil.execute("DELETE FROM Guardian WHERE sdnic = ?",key);
     }
+
+    @Override
+    public String getlastGuardianId() throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Guardian ORDER BY gid DESC LIMIT 1");
+        if (!resultSet.next()) {
+            return null;
+        } else {
+            return resultSet.getString(1);
+        }
+    }
 }

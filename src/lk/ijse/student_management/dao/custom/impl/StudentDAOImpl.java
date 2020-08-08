@@ -64,4 +64,5 @@ public class StudentDAOImpl implements StudentDAO {
     public boolean delete(String key) throws Exception {
         return CrudUtil.execute("DELETE FROM Student WHERE nic = ?",key);
     }
+
 }
