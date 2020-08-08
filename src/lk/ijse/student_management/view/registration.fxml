@@ -127,7 +127,7 @@
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnregister" layoutX="587.0" layoutY="416.0" onAction="#btnregisterOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #e8ff8c;" text="Register" textFill="#4d8a61">
+      <JFXButton fx:id="btnregister" layoutX="679.0" layoutY="416.0" onAction="#btnregisterOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #e8ff8c;" text="Register" textFill="#4d8a61">
          <font>
             <Font size="18.0" />
          </font>
@@ -174,10 +174,5 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnUpdate" layoutX="697.0" layoutY="417.0" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="95.0" style="-fx-background-color: #e8ff8c;" text="Update" textFill="#4d8a61">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </JFXButton>
    </children>
 </AnchorPane>

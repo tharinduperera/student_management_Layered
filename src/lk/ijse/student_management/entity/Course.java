@@ -9,18 +9,22 @@ public class Course implements SuperEntity{
     private String ctype;
     private String duration;
     private BigDecimal cfee;
+    private BigDecimal discount;
+    private BigDecimal tax;
     private BigDecimal dscfull;
     private BigDecimal dsctwice;
 
     public Course() {
     }
 
-    public Course(String cid, String cname, String ctype, String duration, BigDecimal cfee, BigDecimal dscfull, BigDecimal dsctwice) {
+    public Course(String cid, String cname, String ctype, String duration, BigDecimal cfee, BigDecimal discount, BigDecimal tax, BigDecimal dscfull, BigDecimal dsctwice) {
         this.cid = cid;
         this.cname = cname;
         this.ctype = ctype;
         this.duration = duration;
         this.cfee = cfee;
+        this.discount = discount;
+        this.tax = tax;
         this.dscfull = dscfull;
         this.dsctwice = dsctwice;
     }
@@ -65,6 +69,22 @@ public class Course implements SuperEntity{
         this.cfee = cfee;
     }
 
+    public BigDecimal getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
+    }
+
+    public BigDecimal getTax() {
+        return tax;
+    }
+
+    public void setTax(BigDecimal tax) {
+        this.tax = tax;
+    }
+
     public BigDecimal getDscfull() {
         return dscfull;
     }
@@ -89,6 +109,8 @@ public class Course implements SuperEntity{
                 ", ctype='" + ctype + '\'' +
                 ", duration='" + duration + '\'' +
                 ", cfee=" + cfee +
+                ", discount=" + discount +
+                ", tax=" + tax +
                 ", dscfull=" + dscfull +
                 ", dsctwice=" + dsctwice +
                 '}';

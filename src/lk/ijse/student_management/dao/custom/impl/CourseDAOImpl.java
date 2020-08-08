@@ -19,6 +19,8 @@ public class CourseDAOImpl implements CourseDAO {
                     resultSet.getString("ctype"),
                     resultSet.getString("duration"),
                     resultSet.getBigDecimal("cfee"),
+                    resultSet.getBigDecimal("discount"),
+                    resultSet.getBigDecimal("tax"),
                     resultSet.getBigDecimal("dcsfull"),
                     resultSet.getBigDecimal("dcstwice")));
         }
@@ -34,6 +36,8 @@ public class CourseDAOImpl implements CourseDAO {
                     resultSet.getString("ctype"),
                     resultSet.getString("duration"),
                     resultSet.getBigDecimal("cfee"),
+                    resultSet.getBigDecimal("discount"),
+                    resultSet.getBigDecimal("tax"),
                     resultSet.getBigDecimal("dcsfull"),
                     resultSet.getBigDecimal("dcstwice"));
         }
@@ -42,12 +46,12 @@ public class CourseDAOImpl implements CourseDAO {
 
     @Override
     public boolean save(Course entity) throws Exception {
-        return CrudUtil.execute("INSERT INTO COURSE VALUES(?,?,?,?,?,?,?)",entity.getCid(),entity.getCname(),entity.getCtype(),entity.getDuration(),entity.getCfee(),entity.getDscfull(),entity.getDsctwice());
+        return CrudUtil.execute("INSERT INTO COURSE VALUES(?,?,?,?,?,?,?,?,?)",entity.getCid(),entity.getCname(),entity.getCtype(),entity.getDuration(),entity.getCfee(),entity.getDiscount(),entity.getTax(),entity.getDscfull(),entity.getDsctwice());
     }
 
     @Override
     public boolean update(Course entity) throws Exception {
-        return CrudUtil.execute("UPDATE COURSE SET cname=?,ctype=?,duration=?,cfee=?,dcsfull=?,dcstwice=? WHERE cid=?",entity.getCname(),entity.getCtype(),entity.getDuration(),entity.getCfee(),entity.getDscfull(),entity.getDsctwice(),entity.getCid());
+        return CrudUtil.execute("UPDATE COURSE SET cname=?,ctype=?,duration=?,cfee=?,discount=?,tax=?,dcsfull=?,dcstwice=? WHERE cid=?",entity.getCname(),entity.getCtype(),entity.getDuration(),entity.getCfee(),entity.getDiscount(),entity.getTax(),entity.getDscfull(),entity.getDsctwice(),entity.getCid());
     }
 
     @Override

@@ -1,6 +1,6 @@
-drop database billingsystem;
-create database billingsystem;
-use billingsystem;
+drop database student_management;
+create database student_management;
+use student_management;
 
 
 create table student(
@@ -39,6 +39,8 @@ cname varchar(100),
 ctype varchar(50),
 duration varchar(50),
 cfee decimal(8,2),
+discount decimal(8,2),
+tax decimal(8,2),
 dcsfull decimal(8,2),
 dcstwice decimal(8,2),
 constraint primary key(cid)
@@ -62,29 +64,12 @@ bid varchar(50) not null,
 nic varchar(10) not null,
 rdate varchar(10),
 rfee double(8,2),
-constraint primary key(rid),
+constraint primary key(rid,bid),
 constraint foreign key(nic) references student(nic)	
 on delete cascade on update cascade,
 constraint foreign key(bid) references batch(bid)	
 on delete cascade on update cascade
 
-);
-
-create table payment(
-pid varchar(50) not null,
-rid varchar(50) not null,
-nic varchar(11) not null,
-bid varchar(50) not null,
-ptype varchar(100),
-pdate varchar(10),
-amount decimal(8,2),
-constraint primary key(pid),
-constraint foreign key(rid) references registration(rid)	
-on delete cascade on update cascade,
-constraint foreign key(bid) references batch(bid)	
-on delete cascade on update cascade,
-constraint foreign key(nic) references student(nic)	
-on delete cascade on update cascade
 );
 
 create table user(

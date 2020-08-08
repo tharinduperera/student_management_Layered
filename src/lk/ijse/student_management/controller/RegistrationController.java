@@ -39,7 +39,6 @@ public class RegistrationController {
     public JFXCheckBox chkmaster;
     public JFXCheckBox chkother;
     public Label lblrid;
-    public JFXButton btnUpdate;
 
     public void txtnicOnAction(ActionEvent actionEvent) {
     }

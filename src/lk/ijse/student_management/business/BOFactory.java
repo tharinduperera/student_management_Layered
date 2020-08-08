@@ -19,8 +19,6 @@ public class BOFactory {
                 return (T) new BatchBOImpl();
             case COURSE:
                 return (T) new CourseBOImpl();
-            case GUARDIAN:
-                return (T) new GuardianBOImpl();
             case REGISTRATION:
                 return (T) new RegistrationBOImpl();
             case STUDENT:
