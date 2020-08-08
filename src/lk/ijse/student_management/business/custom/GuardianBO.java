@@ -1,4 +1,6 @@
 package lk.ijse.student_management.business.custom;
 
-public interface GuardianBO {
+import lk.ijse.student_management.business.SuperBO;
+
+public interface GuardianBO extends SuperBO {
 }

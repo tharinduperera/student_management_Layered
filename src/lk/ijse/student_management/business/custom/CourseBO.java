@@ -1,4 +1,20 @@
 package lk.ijse.student_management.business.custom;
 
-public interface CourseBO {
+import lk.ijse.student_management.business.SuperBO;
+import lk.ijse.student_management.util.CourseTM;
+
+import java.util.List;
+
+public interface CourseBO extends SuperBO {
+
+    public String getCourseId() throws Exception;
+
+    public List<CourseTM> getAllCourses() throws Exception;
+
+    public boolean saveCourse(CourseTM courseTM) throws Exception;
+
+    public boolean deleteCourse(String cid) throws Exception;
+
+    public boolean updateCourse(CourseTM courseTM) throws Exception;
+
 }
