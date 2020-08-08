@@ -52,4 +52,13 @@ public class RegistrationDAOImpl implements RegistrationDAO {
         return CrudUtil.execute("DELETE FROM Registration WHERE rid=? AND bid = ?",key.getRid(),key.getBid());
     }
 
+    @Override
+    public String getlastRegistrationId() throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Registration ORDER BY rid DESC LIMIT 1");
+        if (!resultSet.next()) {
+            return null;
+        } else {
+            return resultSet.getString(1);
+        }
+    }
 }
