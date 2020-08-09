@@ -2,6 +2,7 @@ package lk.ijse.student_management.dao.custom.impl;
 
 import lk.ijse.student_management.dao.CrudUtil;
 import lk.ijse.student_management.dao.custom.StudentDAO;
+import lk.ijse.student_management.entity.Registration;
 import lk.ijse.student_management.entity.Student;
 
 import java.sql.ResultSet;
@@ -65,4 +66,20 @@ public class StudentDAOImpl implements StudentDAO {
         return CrudUtil.execute("DELETE FROM Student WHERE nic = ?",key);
     }
 
+    @Override
+    public List<Student> searchAll(String key) throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT nic,namewithinitials,dob,address,telhome,telmobile,email,school FROM Student WHERE nic LIKE '%" + key + "%' OR namewithinitials  LIKE '%" + key + "%' OR dob LIKE '%" + key + "%' OR address LIKE '%" + key + "%' OR school LIKE '%" + key + "%' GROUP BY nic,namewithinitials,dob,address,school");
+        List<Student> students = new ArrayList<>();
+        while (resultSet.next()) {
+            students.add(new Student(resultSet.getString("nic"),
+                    resultSet.getString("namewithinitials "),
+                    resultSet.getDate("dob"),
+                    resultSet.getString("address"),
+                    resultSet.getString("telhome"),
+                    resultSet.getString("telmobile"),
+                    resultSet.getString("email"),
+                    resultSet.getString("school")));
+        }
+        return students;
+    }
 }

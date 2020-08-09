@@ -2,6 +2,7 @@ package lk.ijse.student_management.dao.custom.impl;
 
 import lk.ijse.student_management.dao.CrudUtil;
 import lk.ijse.student_management.dao.custom.RegistrationDAO;
+import lk.ijse.student_management.entity.Batch;
 import lk.ijse.student_management.entity.BatchRegistrationPK;
 import lk.ijse.student_management.entity.Registration;
 import lk.ijse.student_management.util.RegistrationTM;
@@ -74,5 +75,19 @@ public class RegistrationDAOImpl implements RegistrationDAO {
                     resultSet.getBigDecimal(5));
         }
         return null;
+    }
+
+    @Override
+    public List<Registration> searchAll(String key) throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Registration WHERE rid LIKE '%" + key + "%' OR bid LIKE '%" + key + "%' OR nic LIKE '%" + key + "%' OR rdate LIKE '%" + key + "%' OR rfee LIKE '%" + key + "%' GROUP BY rid,bid,nid,rdate,rfee");
+        List<Registration> registrations = new ArrayList<>();
+        while (resultSet.next()) {
+            registrations.add(new Registration(resultSet.getString("rid"),
+                    resultSet.getString("bid"),
+                    resultSet.getString("nic"),
+                    resultSet.getDate("rdate"),
+                    resultSet.getBigDecimal("rfee")));
+        }
+        return registrations;
     }
 }

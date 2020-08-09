@@ -36,6 +36,17 @@ public class Student implements SuperEntity{
         this.qualifications = qualifications;
     }
 
+    public Student(String nic, String namewithinitials, Date dob, String address, String telhome, String telmobile, String email, String school) {
+        this.nic = nic;
+        this.namewithinitials = namewithinitials;
+        this.dob = dob;
+        this.address = address;
+        this.telhome = telhome;
+        this.telmobile = telmobile;
+        this.email = email;
+        this.school = school;
+    }
+
     public String getNic() {
         return nic;
     }
