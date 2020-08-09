@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.student_management.business.BOFactory;
 import lk.ijse.student_management.business.BOTypes;
@@ -397,4 +398,6 @@ public class RegistrationController implements Initializable {
         txtpemail.setText("");
     }
 
+    public void txtsearchOnkeyReleased(KeyEvent keyEvent) {
+    }
 }

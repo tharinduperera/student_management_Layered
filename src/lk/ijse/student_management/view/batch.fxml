@@ -41,7 +41,7 @@
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtsearch" layoutX="506.0" layoutY="319.0" onAction="#txtsearchOnAction" promptText="Search Here">
+      <JFXTextField fx:id="txtsearch" layoutX="506.0" layoutY="319.0" onAction="#txtsearchOnAction" onKeyReleased="#txtsearchOnkeyReleased" promptText="Search Here">
          <font>
             <Font size="13.0" />
          </font>

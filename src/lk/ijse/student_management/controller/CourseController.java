@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.student_management.business.BOFactory;
 import lk.ijse.student_management.business.BOTypes;
@@ -141,6 +142,7 @@ public class CourseController implements Initializable {
     }
 
     public void txtsearchOnAction(ActionEvent actionEvent) {
+
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
@@ -232,6 +234,22 @@ public class CourseController implements Initializable {
         tblcourse.refresh();
         try {
             lblcid.setText(courseBO.getCourseId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void txtsearchOnkeyReleased(KeyEvent keyEvent) {
+        try {
+            String key = txtsearch.getText();
+            if (key.trim().equals("")){
+                return;
+            }
+            tblcourse.getItems().clear();
+            List<CourseTM> allCourseTMS = courseBO.searchAll(key);
+            ObservableList<CourseTM> courseTMS = FXCollections.observableArrayList(allCourseTMS);
+            tblcourse.setItems(courseTMS);
+            tblcourse.refresh();
         } catch (Exception e) {
             e.printStackTrace();
         }

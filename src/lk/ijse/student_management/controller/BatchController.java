@@ -15,6 +15,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.student_management.business.BOFactory;
 import lk.ijse.student_management.business.BOTypes;
@@ -198,5 +199,8 @@ public class BatchController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void txtsearchOnkeyReleased(KeyEvent keyEvent) {
     }
 }
