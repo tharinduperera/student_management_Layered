@@ -86,4 +86,22 @@ public class CourseDAOImpl implements CourseDAO {
         }
         return null;
     }
+
+    @Override
+    public List<Course> searchAll(String key) throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Course WHERE cid = ? OR cname = ? OR ctype = ? OR duration = ? OR cfee = ? GROUP BY cid,cname,ctype,cfee", key, key, key, key, key);
+        List<Course> courses = new ArrayList<>();
+        while (resultSet.next()) {
+            courses.add(new Course(resultSet.getString("cid"),
+                    resultSet.getString("cname"),
+                    resultSet.getString("ctype"),
+                    resultSet.getString("duration"),
+                    resultSet.getBigDecimal("cfee"),
+                    resultSet.getBigDecimal("discount"),
+                    resultSet.getBigDecimal("tax"),
+                    resultSet.getBigDecimal("dcsfull"),
+                    resultSet.getBigDecimal("dcstwice")));
+        }
+        return courses;
+    }
 }

@@ -19,5 +19,5 @@ public interface CourseBO extends SuperBO {
 
     public boolean updateCourse(CourseTM courseTM) throws Exception;
 
-
+    public List<CourseTM> searchAll(String key)throws Exception;
 }

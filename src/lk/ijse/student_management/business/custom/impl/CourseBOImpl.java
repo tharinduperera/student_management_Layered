@@ -67,4 +67,14 @@ public class CourseBOImpl implements CourseBO {
     public boolean updateCourse(CourseTM courseTM) throws Exception {
         return courseDAO.update(new Course(courseTM.getCid(),courseTM.getCname(),courseTM.getCtype(),courseTM.getDuration(),courseTM.getCfee(),courseTM.getDiscount(),courseTM.getTax(),courseTM.getDscfull(),courseTM.getDsctwice()));
     }
+
+    @Override
+    public List<CourseTM> searchAll(String key) throws Exception {
+        List<Course>allCourses = courseDAO.searchAll(key);
+        List<CourseTM> courseTMS = new ArrayList<>();
+        for (Course course : allCourses) {
+            courseTMS.add(new CourseTM(course.getCid(),course.getCname(),course.getCtype(),course.getDuration(),course.getCfee(),course.getDiscount(),course.getDsctwice()));
+        }
+        return courseTMS;
+    }
 }
