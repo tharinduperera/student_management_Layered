@@ -7,8 +7,10 @@ import lk.ijse.student_management.dao.custom.GuardianDAO;
 import lk.ijse.student_management.dao.custom.StudentDAO;
 import lk.ijse.student_management.db.DBConnection;
 import lk.ijse.student_management.entity.Guardian;
+import lk.ijse.student_management.entity.Registration;
 import lk.ijse.student_management.entity.Student;
 import lk.ijse.student_management.util.GuardianTM;
+import lk.ijse.student_management.util.RegistrationTM;
 import lk.ijse.student_management.util.StudentTM;
 
 import java.sql.Connection;
@@ -174,5 +176,15 @@ public class StudentBOImpl implements StudentBO {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<StudentTM> searchAll(String key) throws Exception {
+        List<Student>allStudents = studentDAO.searchAll(key);
+        List<StudentTM> studentTMS = new ArrayList<>();
+        for (Student student : allStudents) {
+            studentTMS.add(new StudentTM(student.getNic(),student.getNamewithinitials(),student.getDob(),student.getAddress(),student.getTelhome(),student.getTelmobile(),student.getEmail(),student.getSchool()));
+        }
+        return studentTMS;
     }
 }

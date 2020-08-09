@@ -16,6 +16,7 @@ import lk.ijse.student_management.business.BOTypes;
 import lk.ijse.student_management.business.custom.GuardianBO;
 import lk.ijse.student_management.business.custom.StudentBO;
 import lk.ijse.student_management.util.BatchTM;
+import lk.ijse.student_management.util.CourseTM;
 import lk.ijse.student_management.util.GuardianTM;
 import lk.ijse.student_management.util.StudentTM;
 
@@ -339,5 +340,18 @@ public class StudentController implements Initializable {
     }
 
     public void txtsearchOnkeyReleased(KeyEvent keyEvent) {
+        try {
+            String key = txtsearch.getText();
+            if (key.trim().equals("")){
+                return;
+            }
+            tblStudent.getItems().clear();
+            List<StudentTM> allStudentTMS = studentBO.searchAll(key);
+            ObservableList<StudentTM> studentTMS = FXCollections.observableArrayList(allStudentTMS);
+            tblStudent.setItems(studentTMS);
+            tblStudent.refresh();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

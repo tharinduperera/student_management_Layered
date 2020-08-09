@@ -7,10 +7,11 @@ import lk.ijse.student_management.dao.custom.GuardianDAO;
 import lk.ijse.student_management.dao.custom.RegistrationDAO;
 import lk.ijse.student_management.dao.custom.StudentDAO;
 import lk.ijse.student_management.db.DBConnection;
-import lk.ijse.student_management.entity.BatchRegistrationPK;
+import lk.ijse.student_management.entity.Batch;
 import lk.ijse.student_management.entity.Guardian;
 import lk.ijse.student_management.entity.Registration;
 import lk.ijse.student_management.entity.Student;
+import lk.ijse.student_management.util.BatchTM;
 import lk.ijse.student_management.util.GuardianTM;
 import lk.ijse.student_management.util.RegistrationTM;
 import lk.ijse.student_management.util.StudentTM;
@@ -209,5 +210,15 @@ public class RegistrationBOImpl implements RegistrationBO {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<RegistrationTM> searchAll(String key) throws Exception {
+        List<Registration>allRegistrations = registrationDAO.searchAll(key);
+        List<RegistrationTM> registrationTMS = new ArrayList<>();
+        for (Registration registration : allRegistrations) {
+            registrationTMS.add(new RegistrationTM(registration.getBatchRegistrationPK().getRid(),registration.getBatchRegistrationPK().getBid(),registration.getNic(),registration.getRdate(),registration.getRfee()));
+        }
+        return registrationTMS;
     }
 }

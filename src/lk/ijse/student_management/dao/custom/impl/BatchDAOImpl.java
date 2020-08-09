@@ -77,7 +77,7 @@ public class BatchDAOImpl implements BatchDAO {
 
     @Override
     public List<Batch> searchAll(String key) throws Exception {
-        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Batch WHERE bid LIKE '%" + key + "%' OR bname LIKE '%" + key + "%' OR cid LIKE '%" + key + "%' OR cname LIKE '%" + key + "%' OR startdate LIKE '%" + key + "%' GROUP BY bid,bname,cid,ccname,startdate");
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Batch WHERE bid LIKE '%" + key + "%' OR bname LIKE '%" + key + "%' OR cid LIKE '%" + key + "%' OR cname LIKE '%" + key + "%' OR startdate LIKE '%" + key + "%' GROUP BY bid,bname,cid,cname,startdate");
         List<Batch> batches = new ArrayList<>();
         while (resultSet.next()) {
             batches.add(new Batch(resultSet.getString("bid"),

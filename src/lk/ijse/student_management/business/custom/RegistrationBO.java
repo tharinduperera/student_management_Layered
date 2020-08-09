@@ -1,6 +1,7 @@
 package lk.ijse.student_management.business.custom;
 
 import lk.ijse.student_management.business.SuperBO;
+import lk.ijse.student_management.util.BatchTM;
 import lk.ijse.student_management.util.GuardianTM;
 import lk.ijse.student_management.util.RegistrationTM;
 import lk.ijse.student_management.util.StudentTM;
@@ -20,5 +21,7 @@ public interface RegistrationBO extends SuperBO {
     public boolean deleteRegistration(String rid) throws Exception;
 
     public boolean updateRegistration(RegistrationTM registrationTM,StudentTM studentTM, GuardianTM guardianTM) throws Exception;
+
+    public List<RegistrationTM> searchAll(String key)throws Exception;
 
 }

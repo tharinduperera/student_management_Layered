@@ -63,7 +63,7 @@ public class GuardianDAOImpl implements GuardianDAO {
         if (!resultSet.next()) {
             return null;
         } else {
-            return resultSet.getString(2);
+            return resultSet.getString(1);
         }
     }
 }

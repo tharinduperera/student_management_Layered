@@ -2,6 +2,7 @@ package lk.ijse.student_management.business.custom;
 
 import lk.ijse.student_management.business.SuperBO;
 import lk.ijse.student_management.util.BatchTM;
+import lk.ijse.student_management.util.CourseTM;
 
 import java.util.List;
 
@@ -20,5 +21,7 @@ public interface BatchBO extends SuperBO {
     public BatchTM get(String bid)throws Exception;
 
     public BatchTM getbyName(String name)throws Exception;
+
+    public List<BatchTM> searchAll(String key)throws Exception;
 
 }

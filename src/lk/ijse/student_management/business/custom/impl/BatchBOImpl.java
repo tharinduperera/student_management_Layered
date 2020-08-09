@@ -5,7 +5,9 @@ import lk.ijse.student_management.dao.DAOFactory;
 import lk.ijse.student_management.dao.DAOTypes;
 import lk.ijse.student_management.dao.custom.BatchDAO;
 import lk.ijse.student_management.entity.Batch;
+import lk.ijse.student_management.entity.Course;
 import lk.ijse.student_management.util.BatchTM;
+import lk.ijse.student_management.util.CourseTM;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,5 +77,15 @@ public class BatchBOImpl implements BatchBO {
             return new BatchTM(batch.getBid(),batch.getBname(),batch.getCid(),batch.getCname(),batch.getStartdate());
         }
         return null;
+    }
+
+    @Override
+    public List<BatchTM> searchAll(String key) throws Exception {
+        List<Batch>allBatches = batchDAO.searchAll(key);
+        List<BatchTM> batchTMS = new ArrayList<>();
+        for (Batch batch : allBatches) {
+            batchTMS.add(new BatchTM(batch.getBid(),batch.getBname(),batch.getCid(),batch.getCname(),batch.getStartdate()));
+        }
+        return batchTMS;
     }
 }

@@ -399,5 +399,18 @@ public class RegistrationController implements Initializable {
     }
 
     public void txtsearchOnkeyReleased(KeyEvent keyEvent) {
+        try {
+            String key = txtsearch.getText();
+            if (key.trim().equals("")){
+                return;
+            }
+            tblregistration.getItems().clear();
+            List<RegistrationTM> allRegistrationTMS = registrationBO.searchAll(key);
+            ObservableList<RegistrationTM> registrationTMS = FXCollections.observableArrayList(allRegistrationTMS);
+            tblregistration.setItems(registrationTMS);
+            tblregistration.refresh();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

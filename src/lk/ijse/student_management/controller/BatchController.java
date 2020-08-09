@@ -202,5 +202,18 @@ public class BatchController implements Initializable {
     }
 
     public void txtsearchOnkeyReleased(KeyEvent keyEvent) {
+        try {
+            String key = txtsearch.getText();
+            if (key.trim().equals("")){
+                return;
+            }
+            tblbatch.getItems().clear();
+            List<BatchTM> allBatchTMS = batchBO.searchAll(key);
+            ObservableList<BatchTM> batchTMS = FXCollections.observableArrayList(allBatchTMS);
+            tblbatch.setItems(batchTMS);
+            tblbatch.refresh();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

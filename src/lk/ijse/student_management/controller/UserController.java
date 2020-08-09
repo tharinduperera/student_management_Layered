@@ -13,9 +13,11 @@ public class UserController {
     public JFXButton btnLogin;
 
     public void txtusernameOnAction(ActionEvent actionEvent) {
+        txtpassword.requestFocus();
     }
 
     public void txtpasswordOnAction(ActionEvent actionEvent) {
+        btnLogin.requestFocus();
     }
 
     public void btnLoginOnAction(ActionEvent actionEvent) {

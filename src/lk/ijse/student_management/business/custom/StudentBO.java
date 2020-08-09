@@ -3,6 +3,7 @@ package lk.ijse.student_management.business.custom;
 import lk.ijse.student_management.business.SuperBO;
 import lk.ijse.student_management.util.CourseTM;
 import lk.ijse.student_management.util.GuardianTM;
+import lk.ijse.student_management.util.RegistrationTM;
 import lk.ijse.student_management.util.StudentTM;
 
 import java.util.List;
@@ -20,5 +21,8 @@ public interface StudentBO extends SuperBO {
     public boolean deleteCourse(String nic) throws Exception;
 
     public boolean updateCourse(StudentTM studentTM, GuardianTM guardianTM) throws Exception;
+
+    public List<StudentTM> searchAll(String key)throws Exception;
+
 
 }
