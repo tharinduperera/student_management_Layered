@@ -79,7 +79,7 @@ public class RegistrationDAOImpl implements RegistrationDAO {
 
     @Override
     public List<Registration> searchAll(String key) throws Exception {
-        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Registration WHERE rid LIKE '%" + key + "%' OR bid LIKE '%" + key + "%' OR nic LIKE '%" + key + "%' OR rdate LIKE '%" + key + "%' OR rfee LIKE '%" + key + "%' GROUP BY rid,bid,nid,rdate,rfee");
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Registration WHERE rid LIKE '%" + key + "%' OR bid LIKE '%" + key + "%' OR nic LIKE '%" + key + "%' OR rdate LIKE '%" + key + "%' OR rfee LIKE '%" + key + "%' GROUP BY rid,bid,nic,rdate,rfee");
         List<Registration> registrations = new ArrayList<>();
         while (resultSet.next()) {
             registrations.add(new Registration(resultSet.getString("rid"),
