@@ -19,7 +19,7 @@ public class AppInitializer extends Application {
     }
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/student_management/view/main.fxml"));
+        Parent root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/student_management/view/login.fxml"));
         Scene mainScene = new Scene(root);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Student Management");

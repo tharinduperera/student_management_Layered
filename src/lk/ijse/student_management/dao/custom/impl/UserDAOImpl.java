@@ -45,6 +45,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean login(User user) throws Exception {
-        return CrudUtil.execute("SELECT * FROM User WHERE username = ? AND password = ?",user.getUsername(),user.getUsername());
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM User WHERE username = ? AND password = ?",user.getUsername(),user.getUsername());
+        return resultSet.next();
     }
 }
