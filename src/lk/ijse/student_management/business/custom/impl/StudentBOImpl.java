@@ -47,7 +47,6 @@ public class StudentBOImpl implements StudentBO {
         for (Student student : allStudents) {
             studentTMS.add(new StudentTM(student.getNic(),student.getNamewithinitials(),student.getDob(),student.getAddress(),student.getTelhome(),student.getTelmobile(),student.getEmail(),student.getSchool()));
         }
-        System.out.println(studentTMS);
         return studentTMS;
 
     }

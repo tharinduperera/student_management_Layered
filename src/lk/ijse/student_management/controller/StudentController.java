@@ -62,7 +62,7 @@ public class StudentController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("nic"));
-        tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("namewithinitial"));
+        tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("namewithinitials"));
         tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("dob"));
         tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("address"));
         tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("telhome"));
@@ -105,7 +105,7 @@ public class StudentController implements Initializable {
                     txtmobile.setText(studentTM.getTelmobile());
                     txtschool.setText(studentTM.getSchool());
                     txtuniversity.setText(studentTM.getUniversity());
-                    String array[] = studentTM.getQualifications().split(",");
+                    String array[] = studentTM.getQualifications().split("/");
                     for (int i = 0; i < array.length; i++) {
                         switch (array[i]) {
                             case "Master":

@@ -32,10 +32,6 @@
             </Label>
             <Separator layoutX="238.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="774.0" prefWidth="19.0" />
             <Label layoutX="120.0" layoutY="748.0" prefHeight="17.0" prefWidth="122.0" text="Powered By Thariya..." />
-            <Label fx:id="lblexisting" layoutX="54.0" layoutY="452.0" onDragDetected="#lblexistingOnAction" text="Existing Registration" textAlignment="CENTER" textFill="#2d6b4e">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
             <Button fx:id="btnStudent" layoutX="13.0" layoutY="296.0" mnemonicParsing="false" onAction="#btnStudentOnAction" prefHeight="40.0" prefWidth="219.0" text="Manage Student" textFill="#832d2d">
                <font>
                   <Font size="17.0" />

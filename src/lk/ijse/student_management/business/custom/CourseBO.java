@@ -19,4 +19,5 @@ public interface CourseBO extends SuperBO {
 
     public boolean updateCourse(CourseTM courseTM) throws Exception;
 
+
 }

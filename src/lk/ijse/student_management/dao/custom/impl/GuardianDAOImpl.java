@@ -44,12 +44,12 @@ public class GuardianDAOImpl implements GuardianDAO {
 
     @Override
     public boolean save(Guardian entity) throws Exception {
-        return CrudUtil.execute("INSERT INTO Guardian VALUES(?,?,?,?,?,?,?,?)",entity.getSdnic(),entity.getGid(),entity.getGname(),entity.getGaddress(),entity.getGtel(),entity.getGemail(),entity.getDesignation(),entity.getWorkplace());
+        return CrudUtil.execute("INSERT INTO Guardian VALUES(?,?,?,?,?,?,?,?)",entity.getGid(),entity.getSdnic(),entity.getGname(),entity.getGaddress(),entity.getGtel(),entity.getGemail(),entity.getDesignation(),entity.getWorkplace());
     }
 
     @Override
     public boolean update(Guardian entity) throws Exception {
-        return CrudUtil.execute("UPDATE guardian SET gname=?,gaddress=?,gtel=?,gemail=?,designation=?,workplace=? WHERE gid=?",entity.getGid(),entity.getGname(),entity.getGaddress(),entity.getGtel(),entity.getGemail(),entity.getDesignation(),entity.getWorkplace(),entity.getSdnic());
+        return CrudUtil.execute("UPDATE guardian SET sdnic= ?,gname=?,gaddress=?,gtel=?,gemail=?,designation=?,workplace=? WHERE gid=?",entity.getSdnic(),entity.getGname(),entity.getGaddress(),entity.getGtel(),entity.getGemail(),entity.getDesignation(),entity.getWorkplace(),entity.getGid());
     }
 
     @Override

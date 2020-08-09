@@ -172,6 +172,9 @@ public class BatchController implements Initializable {
 
     public void cmbCourseNameOnAction(ActionEvent actionEvent) {
         String cname = cmbCourseName.getSelectionModel().getSelectedItem().toString();
+        if(cname==null){
+            return;
+        }
         try {
             if (cname != null) {
                 CourseTM courseTM = courseBO.getbyName(cname);
@@ -188,10 +191,9 @@ public class BatchController implements Initializable {
     }
 
     private void reset() {
-        txtname.setText("");
-        cmbCourseName.getSelectionModel().clearSelection();
-        dtpstartDate.setValue(null);
         try {
+            txtname.setText("");
+            dtpstartDate.setValue(null);
             lblbid.setText(batchBO.getBatchId());
         } catch (Exception e) {
             e.printStackTrace();

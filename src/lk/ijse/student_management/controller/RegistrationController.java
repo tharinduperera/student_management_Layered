@@ -106,7 +106,6 @@ public class RegistrationController implements Initializable {
                     String rid = selectedItem.getRid();
 
                     RegistrationTM registrationTM = registrationBO.get(rid);
-                    System.out.println(registrationTM);
                     lblrid.setText(registrationTM.getRid());
                     txtrfee.setText(registrationTM.getRfee().toString());
                     lblbid.setText(registrationTM.getBid());
@@ -213,7 +212,6 @@ public class RegistrationController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(lblbid.getText());
         txtname.requestFocus();
     }
 

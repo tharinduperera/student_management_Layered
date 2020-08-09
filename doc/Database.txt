@@ -20,8 +20,8 @@ constraint primary key(nic)
 ); 
 
 create table guardian(
-sdnic varchar(10) not null,
 gid varchar(10) not null,
+sdnic varchar(10) not null,
 gname varchar(100),
 gaddress varchar(150),
 gtel varchar(11),
