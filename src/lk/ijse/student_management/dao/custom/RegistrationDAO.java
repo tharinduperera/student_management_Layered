@@ -11,4 +11,6 @@ public interface RegistrationDAO extends CrudDAO<Registration, BatchRegistration
 
     public Registration findbyRID(String rid)throws Exception;
 
+
+
 }

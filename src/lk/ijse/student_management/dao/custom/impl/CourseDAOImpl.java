@@ -89,7 +89,7 @@ public class CourseDAOImpl implements CourseDAO {
 
     @Override
     public List<Course> searchAll(String key) throws Exception {
-        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Course WHERE cid LIKE '%" + key + "%' OR cname LIKE '%" + key + "%' OR ctype LIKE '%" + key + "%' OR duration LIKE '%" + key + "%' OR cfee LIKE '%" + key + "%' GROUP BY cid,cname,ctype,cfee");
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Course WHERE cid LIKE '%" + key + "%' OR cname LIKE '%" + key + "%' OR ctype LIKE '%" + key + "%' OR duration LIKE '%" + key + "%' OR cfee LIKE '%" + key + "%' GROUP BY cid,cname,ctype,duration,cfee");
         List<Course> courses = new ArrayList<>();
         while (resultSet.next()) {
             courses.add(new Course(resultSet.getString("cid"),

@@ -3,6 +3,8 @@ package lk.ijse.student_management.dao.custom.impl;
 import lk.ijse.student_management.dao.CrudUtil;
 import lk.ijse.student_management.dao.custom.BatchDAO;
 import lk.ijse.student_management.entity.Batch;
+import lk.ijse.student_management.entity.Course;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +73,19 @@ public class BatchDAOImpl implements BatchDAO {
                     resultSet.getDate(5));
         }
         return null;
+    }
+
+    @Override
+    public List<Batch> searchAll(String key) throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Batch WHERE bid LIKE '%" + key + "%' OR bname LIKE '%" + key + "%' OR cid LIKE '%" + key + "%' OR cname LIKE '%" + key + "%' OR startdate LIKE '%" + key + "%' GROUP BY bid,bname,cid,ccname,startdate");
+        List<Batch> batches = new ArrayList<>();
+        while (resultSet.next()) {
+            batches.add(new Batch(resultSet.getString("bid"),
+                    resultSet.getString("bname"),
+                    resultSet.getString("cid"),
+                    resultSet.getString("cname"),
+                    resultSet.getDate("startdate")));
+        }
+        return batches;
     }
 }
