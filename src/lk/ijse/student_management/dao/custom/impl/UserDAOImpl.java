@@ -42,4 +42,9 @@ public class UserDAOImpl implements UserDAO {
     public boolean delete(String key) throws Exception {
         return CrudUtil.execute("DELETE FROM User WHERE username = ?",key);
     }
+
+    @Override
+    public boolean login(User user) throws Exception {
+        return CrudUtil.execute("SELECT * FROM User WHERE username = ? AND password = ?",user.getUsername(),user.getUsername());
+    }
 }
