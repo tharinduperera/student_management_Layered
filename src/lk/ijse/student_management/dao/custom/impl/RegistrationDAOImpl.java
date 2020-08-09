@@ -4,6 +4,7 @@ import lk.ijse.student_management.dao.CrudUtil;
 import lk.ijse.student_management.dao.custom.RegistrationDAO;
 import lk.ijse.student_management.entity.BatchRegistrationPK;
 import lk.ijse.student_management.entity.Registration;
+import lk.ijse.student_management.util.RegistrationTM;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -60,5 +61,18 @@ public class RegistrationDAOImpl implements RegistrationDAO {
         } else {
             return resultSet.getString(1);
         }
+    }
+
+    @Override
+    public Registration findbyRID(String rid) throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Registration WHERE rid = ? ",rid);
+        if(resultSet.next()){
+            return new Registration(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getDate(4),
+                    resultSet.getBigDecimal(5));
+        }
+        return null;
     }
 }

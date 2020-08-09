@@ -58,4 +58,22 @@ public class BatchBOImpl implements BatchBO {
     public boolean updateBatch(BatchTM batchTM) throws Exception {
         return batchDAO.update(new Batch(batchTM.getBid(),batchTM.getBname(),batchTM.getCid(),batchTM.getCname(),batchTM.getStartdate()));
     }
+
+    @Override
+    public BatchTM get(String bid) throws Exception {
+        Batch batch = batchDAO.find(bid);
+        if(batch!= null){
+            return new BatchTM(batch.getBid(),batch.getBname(),batch.getCid(),batch.getCname(),batch.getStartdate());
+        }
+        return null;
+    }
+
+    @Override
+    public BatchTM getbyName(String name) throws Exception {
+        Batch batch = batchDAO.getbyName(name);
+        if(batch!= null){
+            return new BatchTM(batch.getBid(),batch.getBname(),batch.getCid(),batch.getCname(),batch.getStartdate());
+        }
+        return null;
+    }
 }

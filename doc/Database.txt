@@ -30,7 +30,6 @@ designation varchar(100),
 workplace varchar(100),
 constraint primary key(gid),
 constraint foreign key(sdnic) references student(nic)	
-on delete cascade on update cascade
 );
 
 create table course(
@@ -53,9 +52,7 @@ cid varchar(50) not null,
 cname varchar(100),
 startdate varchar(10),
 constraint primary key(bid),
-constraint foreign key(cid) references course(cid)	
-on delete cascade on update cascade
-
+constraint foreign key(cid) references course(cid)
 );
 
 create table registration(
@@ -64,12 +61,9 @@ bid varchar(50) not null,
 nic varchar(10) not null,
 rdate varchar(10),
 rfee double(8,2),
-constraint primary key(rid,bid),
-constraint foreign key(nic) references student(nic)	
-on delete cascade on update cascade,
-constraint foreign key(bid) references batch(bid)	
-on delete cascade on update cascade
-
+constraint primary key(rid),
+constraint foreign key(nic) references student(nic),	
+constraint foreign key(bid) references batch(bid)
 );
 
 create table user(

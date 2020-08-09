@@ -35,6 +35,19 @@ public class StudentTM {
         this.qualifications = qualifications;
     }
 
+    public StudentTM(String nic, String namewithinitial, Date dob, String address, String telhome, String telmobile, String email, String school) {
+        this.nic = nic;
+        this.namewithinitials = namewithinitial;
+        this.dob = dob;
+        this.address = address;
+        this.telhome = telhome;
+        this.telmobile = telmobile;
+        this.email = email;
+        this.school = school;
+    }
+
+
+
     public String getNic() {
         return nic;
     }

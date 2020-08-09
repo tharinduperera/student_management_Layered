@@ -25,6 +25,8 @@ public class BOFactory {
                 return (T) new StudentBOImpl();
             case USER:
                 return (T) new UserBOImpl();
+            case GUARDIAN:
+                return (T) new GuardianBOImpl();
             default:
                 return null;
         }

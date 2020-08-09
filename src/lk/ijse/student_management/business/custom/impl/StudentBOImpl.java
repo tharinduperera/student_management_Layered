@@ -11,9 +11,7 @@ import lk.ijse.student_management.entity.Student;
 import lk.ijse.student_management.util.GuardianTM;
 import lk.ijse.student_management.util.StudentTM;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +38,18 @@ public class StudentBOImpl implements StudentBO {
             studentTMS.add(new StudentTM(student.getNic(),student.getNamewithinitials(),student.getFullname(),student.getGender(),student.getDob(),student.getAddress(),student.getTelhome(),student.getTelmobile(),student.getEmail(),student.getSchool(),student.getUniversity(),student.getQualifications()));
         }
         return studentTMS;
+    }
+
+    @Override
+    public List<StudentTM> getAllStudentTable() throws Exception {
+        List<Student> allStudents = studentDAO.getAll();
+        List<StudentTM> studentTMS = new ArrayList<>();
+        for (Student student : allStudents) {
+            studentTMS.add(new StudentTM(student.getNic(),student.getNamewithinitials(),student.getDob(),student.getAddress(),student.getTelhome(),student.getTelmobile(),student.getEmail(),student.getSchool()));
+        }
+        System.out.println(studentTMS);
+        return studentTMS;
+
     }
 
     @Override

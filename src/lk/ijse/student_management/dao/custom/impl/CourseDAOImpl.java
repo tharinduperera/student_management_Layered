@@ -3,6 +3,7 @@ package lk.ijse.student_management.dao.custom.impl;
 import lk.ijse.student_management.dao.CrudUtil;
 import lk.ijse.student_management.dao.custom.CourseDAO;
 import lk.ijse.student_management.entity.Course;
+import lk.ijse.student_management.util.CourseTM;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -67,5 +68,22 @@ public class CourseDAOImpl implements CourseDAO {
         } else {
             return resultSet.getString(1);
         }
+    }
+
+    @Override
+    public Course getbyName(String cname) throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Course WHERE cname = ?",cname);
+        if(resultSet.next()){
+            return new Course(resultSet.getString("cid"),
+                    resultSet.getString("cname"),
+                    resultSet.getString("ctype"),
+                    resultSet.getString("duration"),
+                    resultSet.getBigDecimal("cfee"),
+                    resultSet.getBigDecimal("discount"),
+                    resultSet.getBigDecimal("tax"),
+                    resultSet.getBigDecimal("dcsfull"),
+                    resultSet.getBigDecimal("dcstwice"));
+        }
+        return null;
     }
 }

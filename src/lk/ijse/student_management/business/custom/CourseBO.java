@@ -9,6 +9,8 @@ public interface CourseBO extends SuperBO {
 
     public String getCourseId() throws Exception;
 
+    public CourseTM getbyName(String name) throws Exception;
+
     public List<CourseTM> getAllCourses() throws Exception;
 
     public boolean saveCourse(CourseTM courseTM) throws Exception;

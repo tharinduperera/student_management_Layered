@@ -35,6 +35,15 @@ public class CourseBOImpl implements CourseBO {
     }
 
     @Override
+    public CourseTM getbyName(String cname) throws Exception {
+        Course course = courseDAO.getbyName(cname);
+        if(course != null){
+            return new CourseTM(course.getCid(),course.getCname(),course.getCtype(),course.getDuration(),course.getCfee(),course.getDiscount(),course.getTax(),course.getDscfull(),course.getDsctwice());
+        }
+        return null;
+    }
+
+    @Override
     public List<CourseTM> getAllCourses() throws Exception {
         List<Course> allcCourses = courseDAO.getAll();
         List<CourseTM> courseTMS = new ArrayList<>();

@@ -16,7 +16,7 @@ public class DAOFactory {
     public <T extends SuperDAO> T getDAO(DAOTypes DaoTypes){
         switch (DaoTypes){
             case BATCH:
-                return (T) new BatchBOImpl();
+                return (T) new BatchDAOImpl();
             case COURSE:
                 return (T) new CourseDAOImpl();
             case GUARDIAN:

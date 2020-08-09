@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface RegistrationBO extends SuperBO {
 
+    public String getregistrationId() throws Exception;
+
     public RegistrationTM get(String rid) throws Exception;
 
     public List<RegistrationTM> getAllRegistrations() throws Exception;

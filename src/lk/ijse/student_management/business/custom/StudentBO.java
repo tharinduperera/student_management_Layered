@@ -13,6 +13,8 @@ public interface StudentBO extends SuperBO {
 
     public List<StudentTM> getAllStudent() throws Exception;
 
+    public List<StudentTM> getAllStudentTable() throws Exception;
+
     public boolean saveStudent(StudentTM studentTM, GuardianTM guardianTM) throws Exception;
 
     public boolean deleteCourse(String nic) throws Exception;

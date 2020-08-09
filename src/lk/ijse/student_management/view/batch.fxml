@@ -36,7 +36,7 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtname" layoutX="114.0" layoutY="113.0" onAction="#txtnameOnAction" promptText="Course Name" text="Batch Name">
+      <JFXTextField fx:id="txtname" layoutX="114.0" layoutY="113.0" onAction="#txtnameOnAction" promptText="Batch Name">
          <font>
             <Font size="13.0" />
          </font>
@@ -57,7 +57,7 @@
          </font>
       </JFXButton>
       <JFXDatePicker fx:id="dtpstartDate" layoutX="115.0" layoutY="191.0" promptText="Starting Date" />
-      <JFXComboBox fx:id="cmbCourseName" layoutX="366.0" layoutY="116.0" prefHeight="28.0" prefWidth="188.0" promptText="Course Name" />
+      <JFXComboBox fx:id="cmbCourseName" layoutX="366.0" layoutY="116.0" onAction="#cmbCourseNameOnAction" prefHeight="28.0" prefWidth="188.0" promptText="Course Name" />
       <Label fx:id="lblcid" disable="true" layoutX="412.0" layoutY="195.0" visible="false" />
    </children>
 </AnchorPane>

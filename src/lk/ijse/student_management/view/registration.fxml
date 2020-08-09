@@ -13,101 +13,100 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentpane" prefHeight="750.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.student_management.controller.StudentController">
+<AnchorPane fx:id="studentpane" prefHeight="750.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.student_management.controller.RegistrationController">
    <children>
       <Label layoutX="32.0" layoutY="23.0" text="Registration Detail...">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TableView fx:id="tblregistration" layoutX="68.0" layoutY="512.0" prefHeight="225.0" prefWidth="800.0">
+      <TableView fx:id="tblregistration" layoutX="65.0" layoutY="511.0" prefHeight="225.0" prefWidth="800.0">
          <columns>
             <TableColumn prefWidth="129.0" text="Registration ID" />
-            <TableColumn prefWidth="119.0" text="BatchID" />
-            <TableColumn prefWidth="123.0" text="Batch Name" />
-            <TableColumn prefWidth="141.0" text="NIC" />
-            <TableColumn prefWidth="150.0" text="Registered Date" />
-            <TableColumn minWidth="0.0" prefWidth="137.0" text="Registration Fee" />
+            <TableColumn prefWidth="155.0" text="BatchID" />
+            <TableColumn prefWidth="178.0" text="NIC" />
+            <TableColumn prefWidth="187.0" text="Registered Date" />
+            <TableColumn minWidth="0.0" prefWidth="150.0" text="Registration Fee" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="txtnic" layoutX="256.0" layoutY="20.0" onAction="#txtnicOnAction" promptText="NIC" text="NIC">
+      <JFXTextField fx:id="txtnic" layoutX="256.0" layoutY="20.0" onAction="#txtnicOnAction" promptText="NIC">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtrfee" layoutX="459.0" layoutY="20.0" onAction="#txtrfeeOnAction" promptText="NIC" text="Registration Fee">
+      <JFXTextField fx:id="txtrfee" layoutX="459.0" layoutY="20.0" onAction="#txtrfeeOnAction" promptText="Registration Fee">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
       <JFXComboBox fx:id="cmbbname" layoutX="682.0" layoutY="22.0" onAction="#cmbbnameOnAction" prefHeight="25.0" prefWidth="146.0" promptText="Batch Name" />
-      <JFXTextField fx:id="txtname" layoutX="53.0" layoutY="82.0" onAction="#txtnameOnAction" promptText="Course Name" text="Name With Initials">
+      <JFXTextField fx:id="txtname" layoutX="53.0" layoutY="82.0" onAction="#txtnameOnAction" promptText="Name With Initials">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtfullname" layoutX="255.0" layoutY="82.0" onAction="#txtfullnameOnAction" promptText="Duration (Months)" text="Full Name">
+      <JFXTextField fx:id="txtfullname" layoutX="255.0" layoutY="82.0" onAction="#txtfullnameOnAction" promptText="Full Name">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
       <JFXDatePicker fx:id="dtpdob" layoutX="459.0" layoutY="85.0" onAction="#dtpdobOnAction" promptText="Date of Birth" />
-      <JFXTextField fx:id="txtaddress" layoutX="54.0" layoutY="157.0" onAction="#txtaddressOnAction" promptText="Course Fee" text="Address">
+      <JFXTextField fx:id="txtaddress" layoutX="54.0" layoutY="157.0" onAction="#txtaddressOnAction" promptText="Address">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtemail" layoutX="258.0" layoutY="157.0" onAction="#txtemailOnAction" prefHeight="29.0" prefWidth="146.0" promptText="Discount Rate" text="Email">
+      <JFXTextField fx:id="txtemail" layoutX="258.0" layoutY="157.0" onAction="#txtemailOnAction" prefHeight="29.0" prefWidth="146.0" promptText="Email">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txthome" layoutX="535.0" layoutY="166.0" onAction="#txthomeOnAction" prefHeight="29.0" prefWidth="146.0" promptText="Tax Rate" text="Home">
+      <JFXTextField fx:id="txthome" layoutX="535.0" layoutY="166.0" onAction="#txthomeOnAction" prefHeight="29.0" prefWidth="146.0" promptText="Home">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtmobile" layoutX="735.0" layoutY="166.0" onAction="#txtmobileOnAction" promptText="Full Payment" text="Mobile">
+      <JFXTextField fx:id="txtmobile" layoutX="735.0" layoutY="166.0" onAction="#txtmobileOnAction" promptText="Mobile">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtschool" layoutX="55.0" layoutY="233.0" onAction="#txtschoolOnAction" promptText="Installment" text="School">
+      <JFXTextField fx:id="txtschool" layoutX="55.0" layoutY="233.0" onAction="#txtschoolOnAction" promptText="School">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtuniversity" layoutX="258.0" layoutY="233.0" onAction="#txtuniversityOnAction" promptText="Installment" text="University or Other">
+      <JFXTextField fx:id="txtuniversity" layoutX="258.0" layoutY="233.0" onAction="#txtuniversityOnAction" promptText="University or Other">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtpname" layoutX="53.0" layoutY="347.0" onAction="#txtpnameOnAction" prefHeight="29.0" prefWidth="160.0" promptText="NIC" text="Name of Parent / Guardian">
+      <JFXTextField fx:id="txtpname" layoutX="53.0" layoutY="347.0" onAction="#txtpnameOnAction" prefHeight="29.0" prefWidth="160.0" promptText="Name of Parent / Guardian">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtpaddress" layoutX="263.0" layoutY="347.0" onAction="#txtpaddressOnAction" promptText="NIC" text="Address">
+      <JFXTextField fx:id="txtpaddress" layoutX="263.0" layoutY="347.0" onAction="#txtpaddressOnAction" promptText="Address">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtpcontact" layoutX="472.0" layoutY="347.0" onAction="#txtpcontactOnAction" promptText="NIC" text="Contact">
+      <JFXTextField fx:id="txtpcontact" layoutX="472.0" layoutY="347.0" onAction="#txtpcontactOnAction" promptText="Contact">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtpdesignation" layoutX="681.0" layoutY="347.0" onAction="#txtpdesignationOnAtion" promptText="NIC" text="Designation">
+      <JFXTextField fx:id="txtpdesignation" layoutX="681.0" layoutY="347.0" onAction="#txtpdesignationOnAtion" promptText="Designation">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtpworkingplace" layoutX="53.0" layoutY="406.0" onAction="#txtpworkingplaceOnAction" prefHeight="29.0" prefWidth="160.0" promptText="NIC" text="Working Place">
+      <JFXTextField fx:id="txtpworkingplace" layoutX="53.0" layoutY="406.0" onAction="#txtpworkingplaceOnAction" prefHeight="29.0" prefWidth="160.0" promptText="Working Place">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtpemail" layoutX="265.0" layoutY="406.0" onAction="#txtpemailOnAction" prefHeight="29.0" prefWidth="290.0" promptText="NIC" text="Email">
+      <JFXTextField fx:id="txtpemail" layoutX="265.0" layoutY="406.0" onAction="#txtpemailOnAction" prefHeight="29.0" prefWidth="290.0" promptText="Email">
          <font>
             <Font size="13.0" />
          </font>
@@ -174,5 +173,8 @@
             <Font size="13.0" />
          </font>
       </Label>
+      <Label fx:id="lblgid" disable="true" layoutX="875.0" layoutY="65.0" visible="false" />
+      <Label fx:id="lblrdate" disable="true" layoutX="885.0" layoutY="75.0" visible="false" />
+      <Label fx:id="lblbid" disable="true" layoutX="895.0" layoutY="85.0" visible="false" />
    </children>
 </AnchorPane>

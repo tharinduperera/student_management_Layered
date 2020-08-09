@@ -28,8 +28,31 @@ public class RegistrationBOImpl implements RegistrationBO {
     Connection connection = DBConnection.getInstance().getConnection();
 
     @Override
+    public String getregistrationId() throws Exception {
+        String lastRegistrationId = registrationDAO.getlastRegistrationId();
+        if (lastRegistrationId == null) {
+            return "R001";
+        } else {
+            int maxId = Integer.parseInt(lastRegistrationId.replace("R", ""));
+            maxId = maxId + 1;
+            String id = "";
+            if (maxId < 10) {
+                id = "R00" + maxId;
+            } else if (maxId < 100) {
+                id = "R0" + maxId;
+            } else {
+                id = "R" + maxId;
+            }
+            return id;
+        }
+    }
+
+    @Override
     public RegistrationTM get(String rid) throws Exception {
-//        Registration registration = registrationDAO.find(BatchRegistrationPK.);
+        Registration registration = registrationDAO.findbyRID(rid);
+        if(registration != null){
+            return new RegistrationTM(registration.getBatchRegistrationPK().getRid(),registration.getBatchRegistrationPK().getBid(),registration.getNic(),registration.getRdate(),registration.getRfee());
+        }
         return null;
     }
 

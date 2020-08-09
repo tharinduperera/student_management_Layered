@@ -17,4 +17,8 @@ public interface BatchBO extends SuperBO {
 
     public boolean updateBatch(BatchTM batchTM) throws Exception;
 
+    public BatchTM get(String bid)throws Exception;
+
+    public BatchTM getbyName(String name)throws Exception;
+
 }

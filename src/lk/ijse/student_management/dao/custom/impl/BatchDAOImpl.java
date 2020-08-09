@@ -2,17 +2,12 @@ package lk.ijse.student_management.dao.custom.impl;
 
 import lk.ijse.student_management.dao.CrudUtil;
 import lk.ijse.student_management.dao.custom.BatchDAO;
-import lk.ijse.student_management.db.DBConnection;
 import lk.ijse.student_management.entity.Batch;
-
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BatchDAOImpl implements BatchDAO {
-
-    Connection connection = DBConnection.getInstance().getConnection();
     @Override
     public List<Batch> getAll() throws Exception {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM BATCH");
@@ -57,11 +52,24 @@ public class BatchDAOImpl implements BatchDAO {
 
     @Override
     public String getlastBatchId() throws Exception {
-        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Bstch ORDER BY bid DESC LIMIT 1");
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM Batch ORDER BY bid DESC LIMIT 1");
         if (!resultSet.next()) {
             return null;
         } else {
             return resultSet.getString(1);
         }
+    }
+
+    @Override
+    public Batch getbyName(String name) throws Exception {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM BATCH WHERE bname = ?",name);
+        if(resultSet.next()){
+            return new Batch(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getDate(5));
+        }
+        return null;
     }
 }

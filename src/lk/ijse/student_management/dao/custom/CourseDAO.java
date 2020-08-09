@@ -7,4 +7,6 @@ public interface CourseDAO extends CrudDAO<Course,String> {
 
     String getlastCourseId() throws Exception;
 
+    public Course getbyName(String name) throws Exception;
+
 }

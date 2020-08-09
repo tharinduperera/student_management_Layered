@@ -92,6 +92,7 @@ public class CourseController implements Initializable {
                 txtfull.setText(selectedItem.getDscfull()+"");
                 txtinstallment.setText(selectedItem.getDsctwice()+"");
 
+
             }
         });
 
@@ -229,5 +230,10 @@ public class CourseController implements Initializable {
         txtinstallment.setText("");
         txtsearch.setText("");
         tblcourse.refresh();
+        try {
+            lblcid.setText(courseBO.getCourseId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
